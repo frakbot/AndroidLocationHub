@@ -1,0 +1,23 @@
+apply plugin: 'android-library'
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+    }
+    release {
+        runProguard false
+        proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+    }
+}
+
+dependencies {
+    compile project(':location-hub')
+    compile 'com.google.android.gms:play-services:4.1.32'
+    compile fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+}

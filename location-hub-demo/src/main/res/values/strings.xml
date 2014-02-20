@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">LocationHub Demo</string>
+    <string name="location">Location: </string>
+    <string name="adapter">Adapter: </string>
+    <string name="adapter_status">Adapter status: </string>
+    <string name="connected">connected</string>
+    <string name="disconnected">disconnected</string>
+    <string name="failed">connection failed</string>
+    <string name="disconnecting">disconnecting</string>
+
+</resources>

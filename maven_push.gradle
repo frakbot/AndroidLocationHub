@@ -1,6 +1,10 @@
 apply plugin: 'maven'
 apply plugin: 'signing'
 
+archivesBaseName = GROUP_ID
+version = VERSION_NAME
+group = GROUP_ID
+
 def sonatypeRepositoryUrl
 
 def isReleaseBuild() {
@@ -35,9 +39,9 @@ afterEvaluate { project ->
 
                 repository(url: 'file://' + new File(System.getProperty('user.home'), '.m2/repository').absolutePath)
 
-                /*repository(url: sonatypeRepositoryUrl) {
+                repository(url: sonatypeRepositoryUrl) {
                     authentication(userName: nexusUsername, password: nexusPassword)
-                }*/
+                }
 
                 pom.project {
                     name POM_NAME
@@ -64,7 +68,7 @@ afterEvaluate { project ->
                     }
 
                     developers {
-                        for(i in Integer.parseInt(POM_DEVELOPERS)) {
+                        for(int i = 1; i <= Integer.parseInt(POM_DEVELOPERS); i++) {
                             developer {
                                 id getProperty('POM_DEVELOPER_'+ i + '_ID')
                                 name getProperty('POM_DEVELOPER_'+ i + '_NAME')

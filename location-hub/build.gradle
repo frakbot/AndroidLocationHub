@@ -15,6 +15,7 @@
  */
 
 apply plugin: 'android-library'
+apply from: '../maven_push.gradle'
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
@@ -23,8 +24,8 @@ android {
     defaultConfig {
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion rootProject.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
+        versionCode Integer.parseInt(VERSION_CODE)
+        versionName VERSION_NAME
     }
     release {
         runProguard false

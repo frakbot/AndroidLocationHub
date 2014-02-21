@@ -64,7 +64,7 @@ afterEvaluate { project ->
                     }
 
                     developers {
-                        for(i in 1..2) {
+                        for(i in Integer.parseInt(POM_DEVELOPERS)) {
                             developer {
                                 id getProperty('POM_DEVELOPER_'+ i + '_ID')
                                 name getProperty('POM_DEVELOPER_'+ i + '_NAME')
